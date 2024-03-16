@@ -61,14 +61,14 @@ if (mySerial.available()>0)
     lcd.setCursor(9,1);   //Set Cursor again to first column of second row
     lcd.print(float_sen2); //Print measured distance
     lcd.print("cm");  //Print your units.
-    lcd.setCursor(0,3);  //Set LCD cursor to upper left corner, column 0, row 0
+    lcd.setCursor(0,2);  //Set LCD cursor to upper left corner, column 0, row 0
     lcd.print("LEFT: ");  //Print Message on First Row
-    lcd.setCursor(9,3);   //Set Cursor again to first column of second row
+    lcd.setCursor(9,2);   //Set Cursor again to first column of second row
     lcd.print(float_sen3); //Print measured distance
     lcd.print("cm");  //Print your units.
-    lcd.setCursor(0,4);  //Set LCD cursor to upper left corner, column 0, row 0
+    lcd.setCursor(0,3);  //Set LCD cursor to upper left corner, column 0, row 0
     lcd.print("BACK: ");  //Print Message on First Row
-    lcd.setCursor(9,4);   //Set Cursor again to first column of second row
+    lcd.setCursor(9,3);   //Set Cursor again to first column of second row
     lcd.print(float_sen4); //Print measured distance
     lcd.print("cm");  //Print your units.
     delay(100);
@@ -89,9 +89,9 @@ if (float_sen1 > 150 && float_sen2 > 200 && float_sen3 > 200 && float_sen4 < 150
     digitalWrite(sen3_LED, LOW);
     digitalWrite(sen4_LED, HIGH);
     lcd.clear();
-    lcd.setCursor(0,0);  //Set LCD cursor to upper left corner, column 0, row 0
+    lcd.setCursor(0,3);  //Set LCD cursor to upper left corner, column 0, row 0
     lcd.print("BACK: ");  //Print Message on First Row
-    lcd.setCursor(9,0);   //Set Cursor again to first column of second row
+    lcd.setCursor(9,3);   //Set Cursor again to first column of second row
     lcd.print(float_sen4); //Print measured distance
     lcd.print("cm");  //Print your units.
     delay(100);
@@ -112,9 +112,9 @@ if (float_sen1 > 150 && float_sen2 > 200 && float_sen3 > 200 && float_sen4 < 150
     lcd.setCursor(9,1);   //Set Cursor again to first column of second row
     lcd.print(float_sen2); //Print measured distance
     lcd.print("cm");  //Print your units.
-    lcd.setCursor(0,3);  //Set LCD cursor to upper left corner, column 0, row 0
+    lcd.setCursor(0,2);  //Set LCD cursor to upper left corner, column 0, row 0
     lcd.print("LEFT: ");  //Print Message on First Row
-    lcd.setCursor(9,3);   //Set Cursor again to first column of second row
+    lcd.setCursor(9,2);   //Set Cursor again to first column of second row
     lcd.print(float_sen3); //Print measured distance
     lcd.print("cm");  //Print your units.
     delay(100);
@@ -125,9 +125,9 @@ if (float_sen1 > 150 && float_sen2 > 200 && float_sen3 > 200 && float_sen4 < 150
     digitalWrite(sen3_LED, HIGH);
     digitalWrite(sen4_LED, LOW);
     lcd.clear();
-    lcd.setCursor(0,0);  //Set LCD cursor to upper left corner, column 0, row 0
+    lcd.setCursor(0,2);  //Set LCD cursor to upper left corner, column 0, row 0
     lcd.print("LEFT: ");  //Print Message on First Row
-    lcd.setCursor(9,0);   //Set Cursor again to first column of second row
+    lcd.setCursor(9,2);   //Set Cursor again to first column of second row
     lcd.print(float_sen3); //Print measured distance
     lcd.print("cm");  //Print your units.
     delay(100);
