@@ -1,0 +1,31 @@
+#include <SPI.h>
+
+// Define SS pin for the SN65HVD230 chip
+#define SS_SLAVE 10
+
+char receivedData;
+
+void setup() {
+  // Initialize SPI communication
+  SPI.begin();
+  // Set SS pin as input
+  pinMode(SS_SLAVE, INPUT);
+  // Enable SPI interrupt
+  SPI.attachInterrupt();
+  // Initialize Serial communication
+  Serial.begin(9600);
+}
+
+void loop() {
+  // Print received data
+  if (receivedData != '\0') {
+    Serial.println(receivedData);
+    receivedData = '\0'; // Reset received data
+  }
+}
+
+// SPI interrupt service routine
+ISR(SPI_STC_vect) {
+  // Read received data
+  receivedData = SPI.transfer(0);
+}
