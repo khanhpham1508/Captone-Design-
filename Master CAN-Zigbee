@@ -1,0 +1,120 @@
+#include <SoftwareSerial.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#define TX_PIN 9
+#define RX_PIN 8
+SoftwareSerial mySerial_CAN(RX_PIN, TX_PIN);
+
+LiquidCrystal_I2C lcd(0x27, 20, 4);
+SoftwareSerial mySerial_Zigbee(13, 12);
+// Front
+int sen1_LED_G = 0;
+int sen1_LED_O = 1;
+int sen1_LED_R = 2;
+// Right
+int sen2_LED_G = 3;
+int sen2_LED_O = 4;
+int sen2_LED_R = 5;
+// Left
+int sen3_LED_G = 6;
+int sen3_LED_O = 7;
+int sen3_LED_R = 8;
+// Back
+int sen4_LED_G = 5;
+int sen4_LED_O = 10;
+int sen4_LED_R = 11;
+
+// Receive 
+  
+void setup() {
+  mySerial_CAN.begin(9600);
+  mySerial_Zigbee.begin(9600);
+  
+  Serial.begin(9600);
+
+// LED
+  // Front
+  pinMode(sen1_LED_G, OUTPUT);
+  pinMode(sen1_LED_O, OUTPUT);
+  pinMode(sen1_LED_R, OUTPUT);
+  // Right
+  pinMode(sen2_LED_G, OUTPUT);
+  pinMode(sen2_LED_O, OUTPUT);
+  pinMode(sen2_LED_R, OUTPUT);
+  // Left
+  pinMode(sen3_LED_G, OUTPUT);
+  pinMode(sen3_LED_O, OUTPUT);
+  pinMode(sen3_LED_R, OUTPUT);
+  // Back
+  pinMode(sen4_LED_G, OUTPUT);
+  pinMode(sen4_LED_O, OUTPUT);
+  pinMode(sen4_LED_R, OUTPUT);
+
+// LCD
+  lcd.init();
+  lcd.backlight();
+  lcd.clear();
+}
+
+void check_condition_CAN(){
+  if (mySerial_CAN.available()) {
+    while (mySerial_CAN.available()) {
+      Serial.write(mySerial_CAN.read());
+    }
+  }
+}
+
+void check_condition(){
+ if (mySerial_Zigbee.available()>0) 
+  {
+  
+  String rightSensor = mySerial_Zigbee.readStringUntil('#');
+  int rightSensor_Distance = rightSensor.toFloat();
+  String leftSensor = mySerial_Zigbee.readStringUntil('A');
+  int leftSensor_Distance = leftSensor.toFloat();
+   Serial.print("Sensor right:");
+   Serial.println(rightSensor_Distance);
+   Serial.print("Sensor left:");
+   Serial.println(leftSensor_Distance);
+  
+// Warning level for drivers
+  // Front 
+    // Red
+  if ( 20 <(rightSensor_Distance || leftSensor_Distance) < 50){
+     digitalWrite(sen4_LED_R, HIGH);
+     delay(100);
+  }
+  else {
+     digitalWrite(sen4_LED_R, LOW);
+  }
+    // Orange
+  if ( 50 < (rightSensor_Distance || leftSensor_Distance) < 100){
+     digitalWrite(sen4_LED_O, HIGH);
+     delay(100);
+  }
+  else {
+     digitalWrite(sen4_LED_O, LOW);
+  }
+    // Green
+  if ( (rightSensor_Distance || leftSensor_Distance) > 100){
+     digitalWrite(sen4_LED_G, HIGH);
+     delay(100);
+  }
+  else {
+     digitalWrite(sen4_LED_G, LOW);
+  }
+
+ }
+}
+
+void LCD(){
+   lcd.clear();
+   lcd.setCursor(0,0);
+  
+}
+
+void loop() {
+  check_condition();
+//  check_condition_CAN();
+ 
+}
