@@ -1,0 +1,56 @@
+// Central 6 Sen
+void setup() {
+// Khởi động Serial để debug qua USB
+Serial.begin(9600);
+
+// Khởi động Serial1 (UART1) cho module CAN với baudrate 9600
+Serial1.begin(9600);
+
+// Khởi động Serial2 (UART2) cho module Zigbee với baudrate 9600
+Serial2.begin(9600);
+
+// In thông báo để xác nhận Serial1 và Serial2 đã khởi động
+Serial.println("Serial1 (UART1) for CAN started");
+Serial.println("Serial2 (UART2) for Zigbee started");
+}
+
+void loop() {
+// Kiểm tra dữ liệu từ Serial1 (CAN module) và in ra Serial (USB)
+if (Serial1.available()) {
+//Sen1
+String Sen1 = Serial1.readStringUntil('A');
+int Sen1_Distance = Sen1.toFloat();
+Serial.print("Sensor 1:");
+Serial.println(Sen1_Distance);
+//Sen2
+String Sen2 = Serial1.readStringUntil('B');
+int Sen2_Distance = Sen2.toFloat();
+Serial.print("Sensor 2:");
+Serial.println(Sen2_Distance);
+//Sen3
+String Sen3 = Serial1.readStringUntil('C');
+int Sen3_Distance = Sen3.toFloat();
+Serial.print("Sensor 3:");
+Serial.println(Sen3_Distance);
+//Sen4
+String Sen4 = Serial1.readStringUntil('D');
+int Sen4_Distance = Sen4.toFloat();
+Serial.print("Sensor 4:");
+Serial.println(Sen4_Distance);
+}
+
+// Kiểm tra dữ liệu từ Serial2 (Zigbee module) và in ra Serial (USB)
+if (Serial2.available()) {
+//Sen5
+String Sen5 = Serial2.readStringUntil('E');
+int Sen5_Distance = Sen5.toFloat();
+Serial.print("Sensor 5:");
+Serial.println(Sen5_Distance);
+//Sen6
+String Sen6 = Serial2.readStringUntil('F');
+int Sen6_Distance = Sen6.toFloat();
+Serial.print("Sensor 6:");
+Serial.println(Sen6_Distance);
+}
+Serial.println();
+}
