@@ -4,27 +4,18 @@
 LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 int Front_LED_R = 2;
-int Front_LED_O = 3;
 int Left_LED_R = 4;
-int Left_LED_O = 5;
 int Right_LED_R = 6;
-int Right_LED_O = 7;
 int Back_LED_R = 8;
-int Back_LED_O = 9;
 
 void setup() {
     pinMode(Front_LED_R, OUTPUT);
-    pinMode(Front_LED_O, OUTPUT);
     pinMode(Left_LED_R, OUTPUT);
-    pinMode(Left_LED_O, OUTPUT);
     pinMode(Right_LED_R, OUTPUT);
-    pinMode(Right_LED_O, OUTPUT);
     pinMode(Back_LED_R, OUTPUT);
-    pinMode(Back_LED_O, OUTPUT);
-    
     lcd.init();
     lcd.backlight();
-    lcd.clear();
+//    lcd.clear();
     
     // Khởi động Serial để debug qua USB
     Serial.begin(9600);
@@ -43,52 +34,32 @@ void setup() {
 void LED_Left(int Sen1_Distance) {
     if (Sen1_Distance < 50 && Sen1_Distance > 20) {
         digitalWrite(Left_LED_R, HIGH);
-        digitalWrite(Left_LED_O, LOW);
-    } else if (50 < Sen1_Distance && Sen1_Distance < 100) {
-        digitalWrite(Left_LED_R, LOW);
-        digitalWrite(Left_LED_O, HIGH);
     } else {
         digitalWrite(Left_LED_R, LOW);
-        digitalWrite(Left_LED_O, LOW);
     }
 }
 
 void LED_Front(int Sen2_Distance, int Sen3_Distance) {
     if ((Sen2_Distance < 50 && Sen2_Distance > 20) || (Sen3_Distance < 50 && Sen3_Distance > 20)) {
         digitalWrite(Front_LED_R, HIGH);
-        digitalWrite(Front_LED_O, LOW);
-    } else if ((50 < Sen2_Distance && Sen2_Distance < 100) || (50 < Sen3_Distance && Sen3_Distance < 100)) {
-        digitalWrite(Front_LED_R, LOW);
-        digitalWrite(Front_LED_O, HIGH);
     } else {
         digitalWrite(Front_LED_R, LOW);
-        digitalWrite(Front_LED_O, LOW);
     }
 }
 
 void LED_Right(int Sen4_Distance) {
     if (Sen4_Distance < 50 && Sen4_Distance > 20) {
         digitalWrite(Right_LED_R, HIGH);
-        digitalWrite(Right_LED_O, LOW);
-    } else if (50 < Sen4_Distance && Sen4_Distance < 100) {
-        digitalWrite(Right_LED_R, LOW);
-        digitalWrite(Right_LED_O, HIGH);
     } else {
         digitalWrite(Right_LED_R, LOW);
-        digitalWrite(Right_LED_O, LOW);
     }
 }
 
 void LED_Back(int Sen5_Distance, int Sen6_Distance) {
     if ((Sen5_Distance < 50 && Sen5_Distance > 20) || (Sen6_Distance < 50 && Sen6_Distance > 20)) {
         digitalWrite(Back_LED_R, HIGH);
-        digitalWrite(Back_LED_O, LOW);
-    } else if ((50 < Sen5_Distance && Sen5_Distance < 100) || (50 < Sen6_Distance && Sen6_Distance < 100)) {
-        digitalWrite(Back_LED_R, LOW);
-        digitalWrite(Back_LED_O, HIGH);
     } else {
         digitalWrite(Back_LED_R, LOW);
-        digitalWrite(Back_LED_O, LOW);
     }
 }
 
@@ -129,11 +100,39 @@ void LCD_Distance(int Sen1_Distance, int Sen2_Distance, int Sen3_Distance, int S
     lcd.print("cm");
 }
 
-void BACK_ERROR(bool receivedData2) {
-    lcd.clear();
+void BACK_ERROR(int Sen1_Distance, int Sen2_Distance, int Sen3_Distance, int Sen4_Distance, int Sen5_Distance, int Sen6_Distance,bool receivedData2) {
+    
     if (!receivedData2) {
-        lcd.setCursor(0, 2); 
-        lcd.print("BACK ERROR ");
+      lcd.clear();
+    // LEFT 
+    lcd.setCursor(0, 0); 
+    lcd.print("LEFT: ");
+    lcd.setCursor(8, 0);
+    lcd.print(Sen1_Distance);
+    lcd.print("cm");
+    
+    // FRONT    
+    lcd.setCursor(0, 1);
+    lcd.print("FRONT: ");
+    lcd.setCursor(8, 1);
+    lcd.print(Sen2_Distance);
+    lcd.print("cm");
+    lcd.setCursor(15, 1);
+    lcd.print(Sen3_Distance);
+    lcd.print("cm");
+    
+    // RIGHT  
+    lcd.setCursor(0, 2); 
+    lcd.print("RIGHT: ");
+    lcd.setCursor(8, 2);
+    lcd.print(Sen4_Distance);
+    lcd.print("cm");
+    
+    // BACK    
+    lcd.setCursor(0, 3);
+    lcd.print("BACK: ");
+    lcd.setCursor(7, 3);
+    lcd.print("ERROR !!!");
     }
 }
 
@@ -198,6 +197,6 @@ void loop() {
     if (receivedData2 == true) {
         LCD_Distance(Sen1_Distance, Sen2_Distance, Sen3_Distance, Sen4_Distance, Sen5_Distance, Sen6_Distance);
     } else {
-        BACK_ERROR(receivedData2);
+        BACK_ERROR(Sen1_Distance, Sen2_Distance, Sen3_Distance, Sen4_Distance, Sen5_Distance, Sen6_Distance,receivedData2);
     }
 }
