@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2024-06-03T15:26:04.315Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="P-CN-YLcpdlBD-Kb6kFm" version="24.4.13" type="device">
+  <diagram name="Trang-1" id="RB_dhfKZRuXGjNnjTE7P">
+    <mxGraphModel dx="1595" dy="1053" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=18;strokeWidth=2;fillColor=#60A917;strokeColor=#60A917;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="-303" y="4" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-2" value="Receive string data from detecting MCU&lt;div&gt;through Zigbee&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontSize=18;strokeWidth=2;fillColor=#8B4CA6;strokeColor=#8B4CA6;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="-303" y="147" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-3" value="End" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontSize=18;strokeWidth=2;fillColor=#60A917;strokeColor=#60A917;fontColor=#FFFFFF;" parent="1" vertex="1">
+          <mxGeometry x="-303" y="289" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-9" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;" parent="1" source="7-uhhssdpWfFGLcqqf2v-1" target="7-uhhssdpWfFGLcqqf2v-2" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-203" y="95" as="sourcePoint" />
+            <mxPoint x="-122" y="114" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-22" value="Flow Chart 5.2.3" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=42;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-367" y="-123" width="360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="QxvhBzBp0HI4RUuItmWW-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;strokeWidth=2;" edge="1" parent="1" source="7-uhhssdpWfFGLcqqf2v-2" target="7-uhhssdpWfFGLcqqf2v-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-4" y="69" as="sourcePoint" />
+            <mxPoint x="46" y="69" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-12" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="-58" y="117" width="319" height="129" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-13" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8B4CA6;strokeColor=#8B4CA6;" parent="1" vertex="1">
+          <mxGeometry x="-41" y="203" width="175" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#009999;strokeColor=#009999;" parent="1" vertex="1">
+          <mxGeometry x="-41" y="179" width="175" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-15" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60A917;strokeColor=#60A917;" parent="1" vertex="1">
+          <mxGeometry x="-41" y="155" width="175" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-16" value="Legend" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=5;fontSize=19;" parent="1" vertex="1">
+          <mxGeometry x="16.5" y="119" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-17" value="Start/ End Point" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="138" y="152" width="109" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-18" value="Input/ Output" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="138" y="176" width="94" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7-uhhssdpWfFGLcqqf2v-19" value="Task" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="1" vertex="1">
+          <mxGeometry x="138" y="200" width="81" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
