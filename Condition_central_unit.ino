@@ -2,11 +2,10 @@
 #include <LiquidCrystal_I2C.h>
 
 LiquidCrystal_I2C lcd(0x27, 20, 4);
-
-int Front_LED_R = 2;
-int Left_LED_R = 4;
-int Right_LED_R = 6;
-int Back_LED_R = 8;
+int Left_LED_R = 2;
+int Front_LED_R = 3;
+int Right_LED_R = 4;
+int Back_LED_R = 5;
 
 void setup() {
     pinMode(Front_LED_R, OUTPUT);
@@ -32,7 +31,7 @@ void setup() {
 }
 
 void LED_Left(int Sen1_Distance) {
-    if (Sen1_Distance < 50 && Sen1_Distance > 20) {
+    if (Sen1_Distance < 400 && Sen1_Distance > 20) {
         digitalWrite(Left_LED_R, HIGH);
     } else {
         digitalWrite(Left_LED_R, LOW);
@@ -40,7 +39,7 @@ void LED_Left(int Sen1_Distance) {
 }
 
 void LED_Front(int Sen2_Distance, int Sen3_Distance) {
-    if ((Sen2_Distance < 50 && Sen2_Distance > 20) || (Sen3_Distance < 50 && Sen3_Distance > 20)) {
+    if ((Sen2_Distance < 300 && Sen2_Distance > 20) || (Sen3_Distance < 300 && Sen3_Distance > 20)) {
         digitalWrite(Front_LED_R, HIGH);
     } else {
         digitalWrite(Front_LED_R, LOW);
@@ -48,7 +47,7 @@ void LED_Front(int Sen2_Distance, int Sen3_Distance) {
 }
 
 void LED_Right(int Sen4_Distance) {
-    if (Sen4_Distance < 50 && Sen4_Distance > 20) {
+    if (Sen4_Distance < 400 && Sen4_Distance > 20) {
         digitalWrite(Right_LED_R, HIGH);
     } else {
         digitalWrite(Right_LED_R, LOW);
@@ -56,7 +55,7 @@ void LED_Right(int Sen4_Distance) {
 }
 
 void LED_Back(int Sen5_Distance, int Sen6_Distance) {
-    if ((Sen5_Distance < 50 && Sen5_Distance > 20) || (Sen6_Distance < 50 && Sen6_Distance > 20)) {
+    if ((Sen5_Distance < 300 && Sen5_Distance > 20) || (Sen6_Distance < 300 && Sen6_Distance > 20)) {
         digitalWrite(Back_LED_R, HIGH);
     } else {
         digitalWrite(Back_LED_R, LOW);
@@ -170,6 +169,8 @@ void loop() {
         Sen4_Distance = Sen4.toFloat();
         Serial.print("Sensor 4: ");
         Serial.println(Sen4_Distance);
+        
+        
     }
 
     // Kiểm tra dữ liệu từ Serial2 (Zigbee module) và in ra Serial (USB)
@@ -192,7 +193,7 @@ void loop() {
     LED_Front(Sen2_Distance, Sen3_Distance);
     LED_Right(Sen4_Distance);
     LED_Back(Sen5_Distance, Sen6_Distance);
-    Serial.println(Sen4_Distance);
+    
 
     if (receivedData2 == true) {
         LCD_Distance(Sen1_Distance, Sen2_Distance, Sen3_Distance, Sen4_Distance, Sen5_Distance, Sen6_Distance);
