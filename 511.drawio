@@ -1,0 +1,79 @@
+<mxfile host="app.diagrams.net" modified="2024-06-20T16:17:35.440Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" etag="VKSytcHS9pS37G2ONP6X" version="24.5.5" type="device">
+  <diagram id="zELgq5tSNa7VBjCSv0Qw" name="Trang-1">
+    <mxGraphModel dx="1278" dy="1061" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TNIJo72slnBepN6M8ajg-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontFamily=Helvetica;fontSize=18;strokeWidth=2;fillColor=#60a917;strokeColor=#60A917;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="-572" y="-257" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="TNIJo72slnBepN6M8ajg-5" value="Time Echo Signal" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontStyle=1;fontFamily=Helvetica;fontSize=18;strokeWidth=2;fillColor=#009999;fontColor=#ffffff;strokeColor=#009999;" parent="1" vertex="1">
+          <mxGeometry x="-22" y="-257" width="210" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="TNIJo72slnBepN6M8ajg-6" value="MCU calculate distance base on Time Echo Signal received" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontFamily=Helvetica;fontSize=18;strokeWidth=2;fillColor=#8B4CA6;fontColor=#ffffff;strokeColor=#8B4CA6;" parent="1" vertex="1">
+          <mxGeometry x="249" y="-257" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-11" value="End" style="ellipse;whiteSpace=wrap;html=1;fontStyle=1;fontFamily=Helvetica;fontSize=18;strokeWidth=2;fillColor=#60a917;strokeColor=#60A917;fontColor=#ffffff;" parent="1" vertex="1">
+          <mxGeometry x="530" y="-257" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-12" value="Sensor running the measure process by Trigger Pulse and Echo Signal" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontFamily=Helvetica;fontSize=18;strokeWidth=2;fillColor=#8B4CA6;fontColor=#ffffff;strokeColor=#8B4CA6;" parent="1" vertex="1">
+          <mxGeometry x="-285" y="-257" width="200" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-13" value="Flow Chart 5.1.1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=42;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="-40" y="-420" width="360" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-35" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="423" y="-101" width="307" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-32" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="cNTWVorDY8vXj64ZJKox-35" vertex="1">
+          <mxGeometry width="307" height="119" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-22" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8B4CA6;strokeColor=#8B4CA6;" parent="cNTWVorDY8vXj64ZJKox-35" vertex="1">
+          <mxGeometry x="17" y="86" width="175" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-26" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#009999;strokeColor=#009999;" parent="cNTWVorDY8vXj64ZJKox-35" vertex="1">
+          <mxGeometry x="17" y="62" width="175" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-27" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#60A917;strokeColor=#60A917;" parent="cNTWVorDY8vXj64ZJKox-35" vertex="1">
+          <mxGeometry x="17" y="38" width="175" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-28" value="Legend" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=5;fontSize=19;" parent="cNTWVorDY8vXj64ZJKox-35" vertex="1">
+          <mxGeometry x="74.5" y="2" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-29" value="Start/ End Point" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="cNTWVorDY8vXj64ZJKox-35" vertex="1">
+          <mxGeometry x="196" y="35" width="109" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-30" value="Input/ Output" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="cNTWVorDY8vXj64ZJKox-35" vertex="1">
+          <mxGeometry x="196" y="59" width="94" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="cNTWVorDY8vXj64ZJKox-31" value="Task" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" parent="cNTWVorDY8vXj64ZJKox-35" vertex="1">
+          <mxGeometry x="196" y="83" width="81" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="QAqyywDcdWNO-gWucOWL-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;" edge="1" parent="1" source="TNIJo72slnBepN6M8ajg-1" target="cNTWVorDY8vXj64ZJKox-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-372" y="-125" as="sourcePoint" />
+            <mxPoint x="-286" y="-210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QAqyywDcdWNO-gWucOWL-2" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="cNTWVorDY8vXj64ZJKox-12" target="TNIJo72slnBepN6M8ajg-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-106" y="-231" as="sourcePoint" />
+            <mxPoint x="-19" y="-231" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QAqyywDcdWNO-gWucOWL-3" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="TNIJo72slnBepN6M8ajg-5" target="TNIJo72slnBepN6M8ajg-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="-75" y="-202" as="sourcePoint" />
+            <mxPoint x="-2" y="-202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="QAqyywDcdWNO-gWucOWL-4" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;" edge="1" parent="1" source="TNIJo72slnBepN6M8ajg-6" target="cNTWVorDY8vXj64ZJKox-11">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="188" y="-202" as="sourcePoint" />
+            <mxPoint x="259" y="-202" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
