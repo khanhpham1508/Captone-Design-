@@ -149,6 +149,7 @@ void loop() {
         // Sen1
         String Sen1 = Serial1.readStringUntil('A');
         Sen1_Distance = Sen1.toFloat();
+
         Serial.print("Sensor 1: ");
         Serial.println(Sen1_Distance);
 
